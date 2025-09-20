@@ -14,7 +14,7 @@ export default function DemoRequestForm() {
     e.preventDefault();
     setIsPending(true);
 
-    const formData = new FormData(e.currentTarget);
+    // const formData = new FormData(e.currentTarget);
 
     // Simulation d'envoi, remplacer par votre logique
     await new Promise((r) => setTimeout(r, 1000));
