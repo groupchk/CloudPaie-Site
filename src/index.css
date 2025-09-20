@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 📱 Responsive font sizing using clamp() for smooth scaling */
+* {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(12px, 2.5vw, 14px); /* Responsive: 12px on mobile, 14px on desktop */
+}
+
+/* 🎯 Override for specific breakpoints */
+@media (min-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+}
+
+/* 📱 Mobile-first responsive scrollbar */
+::-webkit-scrollbar {
+  width: clamp(4px, 1vw, 6px); /* Responsive scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 🌙 Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 🎨 Smooth transitions with performance optimization */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* 📱 Mobile touch improvements */
+@media (max-width: 768px) {
+  /* Improve tap targets on mobile */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better scroll behavior on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+}
+
+/* 🔧 Utility classes for responsive behavior */
+@layer utilities {
+  .mobile-hidden {
+    @apply hidden md:block;
+  }
+  
+  .mobile-only {
+    @apply block md:hidden;
+  }
+  
+  .touch-action-none {
+    touch-action: none;
+  }
+  
+  /* Safe area for mobile devices with notches */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
