@@ -1,54 +1,54 @@
 "use client";
 
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // --- Typewriter ---
-type TypewriterTextProps = {
-  text: string;
-  speed?: number;
-  startDelay?: number;
-  ariaLabel: string;
-};
+// type TypewriterTextProps = {
+//   text: string;
+//   speed?: number;
+//   startDelay?: number;
+//   ariaLabel: string;
+// };
 
-function TypewriterText({ text, speed = 50, startDelay = 0, ariaLabel }: TypewriterTextProps) {
-  const [displayed, setDisplayed] = useState("");
+// function TypewriterText({ text, speed = 50, startDelay = 0, ariaLabel }: TypewriterTextProps) {
+//   const [displayed, setDisplayed] = useState("");
 
-  useEffect(() => {
-    let i = 0;
-    const start = setTimeout(() => {
-      const interval = setInterval(() => {
-        setDisplayed((prev) => prev + (text[i] ?? ""));
-        i++;
-        if (i >= text.length) clearInterval(interval);
-      }, speed);
-    }, startDelay);
+//   useEffect(() => {
+//     let i = 0;
+//     const start = setTimeout(() => {
+//       const interval = setInterval(() => {
+//         setDisplayed((prev) => prev + (text[i] ?? ""));
+//         i++;
+//         if (i >= text.length) clearInterval(interval);
+//       }, speed);
+//     }, startDelay);
 
-    return () => clearTimeout(start);
-  }, [text, speed, startDelay]);
+//     return () => clearTimeout(start);
+//   }, [text, speed, startDelay]);
 
-  return (
-    <span aria-label={ariaLabel}>
-      {displayed}
-      <span className="inline-block w-[1ch] -mb-1.5 ml-[1px] animate-pulse opacity-70">
-        |
-      </span>
-    </span>
-  );
-}
+//   return (
+//     <span aria-label={ariaLabel}>
+//       {displayed}
+//       <span className="inline-block w-[1ch] -mb-1.5 ml-[1px] animate-pulse opacity-70">
+//         |
+//       </span>
+//     </span>
+//   );
+// }
 
 // --- SectionReveal simple ---
-function SectionReveal({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+// function SectionReveal({ children }: { children: React.ReactNode }) {
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: 24 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.7, ease: "easeOut" }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
 
 // --- Logos ---
 const sampleLogos = [

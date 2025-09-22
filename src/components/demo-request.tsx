@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { DemoRequestFormData } from "../lib/DemoRequestFormData";
+// import type { DemoRequestFormData } from "../lib/DemoRequestFormData";
 //import { sendFormMail } from "../services/demoService";
 
 interface DemoRequestState {
@@ -17,7 +17,7 @@ export default function DemoRequestForm() {
     setIsPending(true);
 
 
-   const formData = Object.fromEntries( new FormData(e.currentTarget)) as unknown as DemoRequestFormData
+   //const formData = Object.fromEntries( new FormData(e.currentTarget)) as unknown as DemoRequestFormData
    try {
    // await sendFormMail(formData);
     setState({

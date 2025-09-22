@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+//import type { ReactNode } from "react";
 
 // Liste réelle des partenaires
 const sampleLogos = [
@@ -41,17 +41,17 @@ const sampleLogos = [
 ];
 
 // Petit wrapper reveal simple
-function SectionReveal({ children }: { children: ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+// function SectionReveal({ children }: { children: ReactNode }) {
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: 24 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.7, ease: "easeOut" }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
 
 export default function TrustedLogos() {
   return (
