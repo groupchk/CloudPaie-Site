@@ -25,7 +25,7 @@ function App() {
         <TrustedLogos />
         <About />
         <Features />
-        <DeveloperAPISection />
+        {/* <DeveloperAPISection /> */}
         <MobileAppSection />
         <WhyCloudPay />
         <Testimonials />

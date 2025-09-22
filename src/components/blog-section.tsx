@@ -37,7 +37,7 @@ const POSTS: Post[] = [
 
 export default function BlogSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-100">
+    <section id="blog" className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-12">

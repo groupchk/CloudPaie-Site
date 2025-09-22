@@ -7,10 +7,10 @@ export default function Navbar() {
   const nav = [
     { label: "À propos", href: "#a-propos" },
     { label: "Fonctionnalités", href: "#fonctionnalites" },
-    { label: "API", href: "#api" },
+    // { label: "API", href: "#api" },
     { label: "App mobile", href: "#app-mobile" },
     { label: "Pourquoi CloudPaie", href: "#pourquoi" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog", href: "#blog" },
     { label: "Tarifs", href: "#tarifs" },
     { label: "Contact", href: "#contact" },
   ];

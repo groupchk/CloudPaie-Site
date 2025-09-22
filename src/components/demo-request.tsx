@@ -1,4 +1,6 @@
 import { useState } from "react";
+import type { DemoRequestFormData } from "../lib/DemoRequestFormData";
+//import { sendFormMail } from "../services/demoService";
 
 interface DemoRequestState {
   success?: boolean;
@@ -14,15 +16,21 @@ export default function DemoRequestForm() {
     e.preventDefault();
     setIsPending(true);
 
-    // const formData = new FormData(e.currentTarget);
 
-    // Simulation d'envoi, remplacer par votre logique
-    await new Promise((r) => setTimeout(r, 1000));
-
+   const formData = Object.fromEntries( new FormData(e.currentTarget)) as unknown as DemoRequestFormData
+   try {
+   // await sendFormMail(formData);
     setState({
       success: true,
       message: "Votre demande a été envoyée avec succès !",
     });
+   } catch (error) {
+    setState({
+      success: false,
+      message: "Une erreur s'est produite !",
+    });
+   }
+   
     setIsPending(false);
   };
 

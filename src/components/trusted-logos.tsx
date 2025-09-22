@@ -55,22 +55,17 @@ function SectionReveal({ children }: { children: ReactNode }) {
 
 export default function TrustedLogos() {
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="container px-4 md:px-6">
-        <SectionReveal>
-          <div className="text-center mb-8">
-            <p className="text-sm uppercase tracking-wider text-gray-500">
-              Ils nous font confiance
-            </p>
-          </div>
-
-          {/* Marquee défilant */}
+   <section className="py-12 bg-blue-600 text-white">
+        <div className="container px-4 md:px-6">
+          <p className="text-center mb-6 text-lg font-medium">
+            Ils nous font confiance
+          </p>
           <div className="relative overflow-hidden">
             <motion.div
               className="flex gap-8 items-center"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
-                duration: 25, // un peu plus lent vu la grande liste
+                duration: 25,
                 ease: "linear",
                 repeat: Number.POSITIVE_INFINITY,
               }}
@@ -78,15 +73,15 @@ export default function TrustedLogos() {
               {[...sampleLogos, ...sampleLogos].map((logo, i) => (
                 <div
                   key={`${logo.name}-${i}`}
-                  className="h-10 px-4 rounded-md border bg-white text-gray-500 flex items-center justify-center whitespace-nowrap hover:text-gray-800 transition-colors"
+                  className="h-10 px-4 rounded-md border border-white/30 bg-white/10 text-white flex items-center justify-center whitespace-nowrap"
                 >
                   {logo.name}
                 </div>
               ))}
             </motion.div>
           </div>
-        </SectionReveal>
-      </div>
-    </section>
+        </div>
+      </section>
+
   );
 }
